@@ -1,0 +1,67 @@
+@mixin menu {
+  .app-shell {
+    .logo {
+      // our logo text is white
+      color: #fff;
+      word-wrap: break-word;
+    }
+    .v-caption-logo {
+      // this is the (font)icon
+      @extend .v-label;
+      @extend .logo;
+    }
+    .navigation-bar {
+      color: lighten($v-focus-color, 40%);
+      background-size: cover;
+      background-position: top;
+      background-image: $app-background-gradient;
+
+      .v-button {
+        border-radius: 0;
+      }
+      .selected {
+        background: rgba(0, 0, 0, .2);
+        color: lighten($v-focus-color, 60%);
+        .v-icon, .v-button-caption {
+          color: lighten($v-focus-color, 60%);
+        }
+      }
+      .activeViewName {
+        line-height: $v-unit-size;
+        width: auto !important;
+        padding: 0 $v-unit-size / 2.5;
+        font-size: $v-font-size;
+      }
+    }
+
+    .navigation .v-button {
+      font-size: 26px;
+      height: 60px;
+      padding: 10px 6px;
+      box-sizing: border-box;
+      line-height: 1;
+
+      &:before {
+        content: none;
+      }
+
+      .v-button-wrap {
+        width: 100%
+      }
+
+      .v-button-caption {
+        font-size: $v-font-size * 0.6;
+        margin: 0;
+        width: 100%;
+        float: left;
+        margin-top: 3px;
+        text-align: center;
+      }
+
+      .v-icon {
+        width: 100%;
+        float: left;
+      }
+    }
+  }
+}

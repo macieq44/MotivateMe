@@ -1,0 +1,37 @@
+@mixin calendarview {
+  $calendar-bg-color: $v-focus-color;
+
+  .calendar-view {
+    max-width: 768px;
+  }
+
+  .calendar {
+
+    .v-button {
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
+      border: none;
+      background: none;
+
+      font-size: 18px;
+
+      text-align: center;
+      color: darken($calendar-bg-color, 4%);
+
+      transition-duration: 1s;
+
+
+      &:hover {
+        background-color: rgba(0, 92, 131, .4);
+        color: white;
+        transition-duration: 0.5s;
+        &::after {
+          background: none;
+          color: darken($calendar-bg-color, 4%);
+        }
+      }
+    }
+  }
+}

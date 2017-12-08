@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="com_gmail_macieq44_motivateme_ui_calendar:com.gmail.macieq44.motivateme.ui.calendar">
+ </head>
+ <body>
+  <vaadin-css-layout style-name="day-preview" width-full>
+   <vaadin-vertical-layout width="768px">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6f1" style-name="back-button" plain-text _id="backToCalendar" :middle></vaadin-button>
+     <vaadin-label style-name="h2 colored bold" plain-text _id="dateLabel" :middle :right>
+       December 6th 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-label style-name="header" plain-text :bottom>
+       activities 
+     </vaadin-label>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless icon-align-right primary" plain-text _id="addActivity" :bottom :right>
+       New 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <com_gmail_macieq44_motivateme_ui_calendar-activity-grid primary-style-name="" width-full height="400px" _id="activityList" :expand></com_gmail_macieq44_motivateme_ui_calendar-activity-grid>
+   </vaadin-vertical-layout>
+  </vaadin-css-layout>
+ </body>
+</html>

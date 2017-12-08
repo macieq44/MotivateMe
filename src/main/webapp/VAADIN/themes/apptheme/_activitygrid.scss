@@ -1,0 +1,36 @@
+@mixin activitygrid {
+  .v-grid.activity-grid{
+    > div {
+      border-left: 0;
+      border-bottom: 0;
+    }
+    width: 768px;
+    .v-grid-cell {
+      height: 60px;
+    }
+
+    .summary,
+    .value {
+      padding: $v-table-cell-padding-horizontal;
+
+      .header,
+      .content {
+        display: block;
+      }
+    }
+
+    .summary {
+      display: block;
+      .header {
+        font-size: $v-font-size--large;
+      }
+      .content {
+        font-size: $v-font-size--small;
+      }
+    }
+
+    .value {
+      font-size: $v-font-size--small;
+    }
+  }
+}

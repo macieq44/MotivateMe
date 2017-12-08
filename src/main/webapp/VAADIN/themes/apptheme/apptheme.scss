@@ -1,0 +1,27 @@
+$v-focus-color: #a8a8a8;
+$font: "Segoe UI", Helvetica, Arial, sans-serif;
+$app-background-gradient: unquote("linear-gradient(180deg, #00567b 20%, #3b3b3b 90%)");
+
+@import '../valo/valo.scss';
+@import "dayview";
+@import "calendarview";
+@import "activitygrid";
+@import "menu";
+@mixin apptheme {
+  @include valo;
+  @include dayview;
+  @include calendarview;
+  @include activitygrid;
+  @include menu;
+
+  .Vaadin-Icons {
+    // Make Vaadin Icons behave exactly like FontAwesome
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    text-align: center;
+  }
+
+}
