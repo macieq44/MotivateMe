@@ -48,5 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         FormLoginConfigurer<HttpSecurity> login = sec.formLogin().permitAll();
         login = login.loginPage(MotivateMeApplication.LOGIN_URL).loginProcessingUrl(MotivateMeApplication.LOGIN_PROCESSING_URL).failureUrl(MotivateMeApplication.LOGIN_FAILURE_URL).successHandler(successHandler);
         login.and().logout().logoutSuccessUrl(MotivateMeApplication.LOGOUT_URL);
+
+
+
     }
 }
