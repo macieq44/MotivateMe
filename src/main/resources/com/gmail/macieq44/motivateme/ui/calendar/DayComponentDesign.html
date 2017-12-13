@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
   <meta name="vaadin-version" content="8.0.5">
-  <meta name="package-mapping" content="com_gmail_macieq44_motivateme_ui_calendar:com.gmail.macieq44.motivateme.ui.calendar">
  </head>
  <body>
-  <vaadin-css-layout style-name="dayview" size-full>
-   <vaadin-vertical-layout size-full margin="false">
-    <vaadin-horizontal-layout>
-     <com_gmail_macieq44_motivateme_ui_calendar-activity-type-combo-box _id="activityTypes"></com_gmail_macieq44_motivateme_ui_calendar-activity-type-combo-box>
-    </vaadin-horizontal-layout>
+  <vaadin-css-layout style-name="daycomponent" width="75px" height="75px">
+   <vaadin-vertical-layout spacing="false" width="75px" height="75px" margin="false">
+    <vaadin-button width="50px" height="50px" plain-text _id="day" :middle :center>
+      1 
+    </vaadin-button>
+    <vaadin-horizontal-layout spacing="false" width="75px" height="20px" _id="todos" :bottom :center></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-css-layout>
  </body>

@@ -6,7 +6,7 @@
     }
     width: 768px;
     .v-grid-cell {
-      height: 60px;
+      height: 80px;
     }
 
     .summary,
@@ -22,15 +22,16 @@
     .summary {
       display: block;
       .header {
-        font-size: $v-font-size--large;
+        font-size: 15px;
+        font-weight: bold;
       }
       .content {
-        font-size: $v-font-size--small;
+        font-size: 12px;
       }
     }
 
     .value {
-      font-size: $v-font-size--small;
+      font-size: 15px;
     }
   }
 }

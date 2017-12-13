@@ -2,10 +2,8 @@ package com.gmail.macieq44.motivateme.app;
 
 import com.gmail.macieq44.motivateme.backend.entity.Activity;
 import com.gmail.macieq44.motivateme.backend.entity.ActivityType;
-import com.gmail.macieq44.motivateme.backend.entity.Day;
 import com.gmail.macieq44.motivateme.backend.repository.ActivityRepository;
 import com.gmail.macieq44.motivateme.backend.repository.ActivityTypeRepository;
-import com.gmail.macieq44.motivateme.backend.repository.DayRepository;
 import com.vaadin.spring.annotation.SpringComponent;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -22,29 +20,30 @@ import java.util.Random;
 @SpringComponent
 public class DataGenerator {
     private static final String[] ACTIVITY_TYPES = new String[]{"Nauka", "Praca", "Sprzątanie", "Zakupy"};
-    private static final String[] ACTIVITIES = new String[] {"Nauka MO", "Pisanie programu", "Sprzątanie kuchni"};
+    private static final String[] ACTIVITIES = new String[] {"Nauka MO", "Pisanie programu", "Sprzątanie kuchni", "Czytanie", "Gotowanie obiadu",
+                                                            "Umycie Janka", "Zrobienie zakupów", "Nauka na egzamin z MO", "Nauka na egzamin z WP",
+                                                            "Pisanie pracy Lic", "Sprzątanie łazienki"};
     private static final String[] DATES = new String[] {"2017-12-05", "2017-12-06", "2017-12-07", "2017-12-08"};
 
     private final Random random = new Random(2L);
 
-    private List<Day> days = new ArrayList<>();
+    private List<LocalDate> days = new ArrayList<>();
     private List<ActivityType> activityTypes = new ArrayList<>();
 
     @Bean
-    public CommandLineRunner loadData(ActivityRepository activityRepository, ActivityTypeRepository activityTypeRepository, DayRepository dayRepository) {
+    public CommandLineRunner loadData(ActivityRepository activityRepository, ActivityTypeRepository activityTypeRepository) {
         return args -> {
-            days = createDays(dayRepository);
+            days = createDays();
             activityTypes = createActivityTypes(activityTypeRepository);
             createActivities(activityRepository);
         };
     }
 
     private void createActivities(ActivityRepository activityRepository) {
-        //TODO: create separate lists for activity types and days so it's possible to insert them into activities without using repositories
         for(String activityName: ACTIVITIES) {
             Activity activity = new Activity();
             activity.setName(activityName);
-            activity.setDate(days.get(random.nextInt(4)).getDate());
+            activity.setDate(days.get(random.nextInt(4)));
             activity.setStruggle(random.nextInt(6) + 1);
             activity.setTime(getRandomTime());
             activity.setTimeSpent(random.nextInt(115) + 1);
@@ -69,14 +68,11 @@ public class DataGenerator {
         return types;
     }
 
-    private List<Day> createDays(DayRepository dayRepository) {
-        List<Day> days = new ArrayList<>();
+    private List<LocalDate> createDays() {
+        List<LocalDate> days = new ArrayList<>();
         for(String date: DATES) {
-            Day day = new Day();
-            day.setDate(LocalDate.parse(date));
+            LocalDate day = LocalDate.parse(date);
             days.add(day);
-
-            dayRepository.save(day);
         }
 
         return days;

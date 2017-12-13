@@ -8,22 +8,22 @@
  </head>
  <body>
   <vaadin-css-layout style-name="day-preview" width-full>
-   <vaadin-vertical-layout width="768px">
+   <vaadin-vertical-layout margin="false">
     <vaadin-horizontal-layout width-full>
      <vaadin-button icon="fonticon://Vaadin-Icons/e6f1" style-name="back-button" plain-text _id="backToCalendar" :middle></vaadin-button>
-     <vaadin-label style-name="h2 colored bold" plain-text _id="dateLabel" :middle :right>
+     <vaadin-label style-name="h2 colored bold" plain-text _id="date" :middle :right>
        December 6th 
      </vaadin-label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout width-full>
-     <vaadin-label style-name="header" plain-text :bottom>
+     <vaadin-label style-name="header1" plain-text :bottom>
        activities 
      </vaadin-label>
      <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless icon-align-right primary" plain-text _id="addActivity" :bottom :right>
        New 
      </vaadin-button>
     </vaadin-horizontal-layout>
-    <com_gmail_macieq44_motivateme_ui_calendar-activity-grid primary-style-name="" width-full height="400px" _id="activityList" :expand></com_gmail_macieq44_motivateme_ui_calendar-activity-grid>
+    <com_gmail_macieq44_motivateme_ui_calendar-activity-grid style-name="activity-grid" width-full _id="activityList"></com_gmail_macieq44_motivateme_ui_calendar-activity-grid>
    </vaadin-vertical-layout>
   </vaadin-css-layout>
  </body>

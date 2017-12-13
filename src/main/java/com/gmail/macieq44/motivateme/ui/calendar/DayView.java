@@ -9,6 +9,7 @@ import com.vaadin.spring.annotation.SpringView;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 import java.time.YearMonth;
 
 /**
@@ -17,12 +18,10 @@ import java.time.YearMonth;
 @SpringView
 public class DayView extends DayViewDesign implements View{
     private final DayViewPresenter presenter;
-    private final ActivityService activityService;
 
     @Autowired
-    public DayView(DayViewPresenter presenter, ActivityService activityService) {
+    public DayView(DayViewPresenter presenter) {
         this.presenter = presenter;
-        this.activityService = activityService;
     }
 
     @PostConstruct
@@ -37,8 +36,8 @@ public class DayView extends DayViewDesign implements View{
         presenter.enterView(event.getParameters());
     }
 
-    public void setDay(Day dayToDisplay) {
-        dateLabel.setValue(DateUtils.getDateAsString(dayToDisplay.getDate()));
+    public void setDay(LocalDate dayToDisplay) {
+        date.setValue(DateUtils.getDateAsString(dayToDisplay));
         activityList.setDay(dayToDisplay);
     }
 }

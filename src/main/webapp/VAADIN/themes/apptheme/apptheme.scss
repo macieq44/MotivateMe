@@ -7,12 +7,14 @@ $app-background-gradient: unquote("linear-gradient(180deg, #00567b 20%, #3b3b3b 
 @import "calendarview";
 @import "activitygrid";
 @import "menu";
+@import "daycomponent";
 @mixin apptheme {
   @include valo;
   @include dayview;
   @include calendarview;
   @include activitygrid;
   @include menu;
+  @include daycomponent;
 
   .Vaadin-Icons {
     // Make Vaadin Icons behave exactly like FontAwesome

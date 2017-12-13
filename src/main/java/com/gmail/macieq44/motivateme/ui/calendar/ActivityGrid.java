@@ -11,6 +11,7 @@ import org.springframework.web.util.HtmlUtils;
 import org.vaadin.spring.annotation.PrototypeScope;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 
 /**
  * Created by Macieq44 on 06.12.2017.
@@ -52,7 +53,7 @@ public class ActivityGrid extends Grid<Activity> {
         setDataProvider(dataProvider);
     }
 
-    public void setDay(Day day) {
+    public void setDay(LocalDate day) {
         dataProvider.setDay(day);
     }
 

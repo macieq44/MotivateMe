@@ -1,9 +1,4 @@
 package com.gmail.macieq44.motivateme.ui.calendar;
-
-import com.gmail.macieq44.motivateme.backend.entity.Day;
-import com.gmail.macieq44.motivateme.backend.service.ActivityService;
-import com.gmail.macieq44.motivateme.backend.service.ActivityTypeService;
-import com.gmail.macieq44.motivateme.backend.service.DayService;
 import com.gmail.macieq44.motivateme.ui.navigation.NavigationManager;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
@@ -19,16 +14,10 @@ import java.time.LocalDate;
 public class DayViewPresenter {
     private DayView view;
     private final NavigationManager navigationManager;
-    private final DayService dayService;
-    private final ActivityService activityService;
-    private final ActivityTypeService activityTypeService;
 
     @Autowired
-    public DayViewPresenter(NavigationManager navigationManager, DayService dayService, ActivityService activityService, ActivityTypeService activityTypeService) {
+    public DayViewPresenter(NavigationManager navigationManager) {
         this.navigationManager = navigationManager;
-        this.dayService = dayService;
-        this.activityService = activityService;
-        this.activityTypeService = activityTypeService;
     }
 
     public void init(DayView view) {
@@ -36,24 +25,13 @@ public class DayViewPresenter {
     }
 
     public void enterView(String dayToDisplay) {
-        Day day;
-        if (dayToDisplay == null) {
-            //TODO
-            day = new Day();
-        } else {
-            day = dayService.findDay(dayToDisplay);
-        }
 
-        if (day == null) {
-            day = new Day();
-            day.setDate(LocalDate.parse(dayToDisplay));
-            dayService.save(day);
-        }
+        LocalDate day = LocalDate.parse(dayToDisplay);
 
         refreshView(day);
     }
 
-    private void refreshView(Day dayToDisplay) {
+    private void refreshView(LocalDate dayToDisplay) {
         view.setDay(dayToDisplay);
     }
 

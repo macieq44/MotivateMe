@@ -60,8 +60,8 @@ public class ActivityDataProvider extends FilterablePageableDataProvider<Activit
         return (int) activityService.countMatching(getOptionalFilterDate());
     }
 
-    public void setDay(Day day) {
-        filterDate = day.getDate();
+    public void setDay(LocalDate day) {
+        filterDate = day;
         this.refreshAll();
     }
 }
