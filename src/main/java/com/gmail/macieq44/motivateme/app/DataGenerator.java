@@ -1,12 +1,16 @@
 package com.gmail.macieq44.motivateme.app;
 
+import com.gmail.macieq44.motivateme.backend.Role;
 import com.gmail.macieq44.motivateme.backend.entity.Activity;
 import com.gmail.macieq44.motivateme.backend.entity.ActivityType;
+import com.gmail.macieq44.motivateme.backend.entity.User;
 import com.gmail.macieq44.motivateme.backend.repository.ActivityRepository;
 import com.gmail.macieq44.motivateme.backend.repository.ActivityTypeRepository;
+import com.gmail.macieq44.motivateme.backend.repository.UserRepository;
 import com.vaadin.spring.annotation.SpringComponent;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -31,12 +35,20 @@ public class DataGenerator {
     private List<ActivityType> activityTypes = new ArrayList<>();
 
     @Bean
-    public CommandLineRunner loadData(ActivityRepository activityRepository, ActivityTypeRepository activityTypeRepository) {
+    public CommandLineRunner loadData(ActivityRepository activityRepository, ActivityTypeRepository activityTypeRepository,
+                                      UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
             days = createDays();
             activityTypes = createActivityTypes(activityTypeRepository);
             createActivities(activityRepository);
+            createUser(userRepository, passwordEncoder);
         };
+    }
+
+    private void createUser(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        User user = new User("macieq44@gmail.com", "Maciej Piechota",
+                passwordEncoder.encode("maciek"), Role.USER);
+        userRepository.save(user);
     }
 
     private void createActivities(ActivityRepository activityRepository) {
