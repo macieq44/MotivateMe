@@ -16,6 +16,7 @@ public interface ActivityTypeRepository extends JpaRepository<ActivityType, Long
     Page<ActivityType> findByActive(boolean active, Pageable pageable);
     Page<ActivityType> findByTypeNameLikeIgnoreCase(String filter, Pageable pageable);
     Page<ActivityType> findByActiveAndTypeNameLikeIgnoreCase(boolean active, String filter, Pageable pageable);
+    Long countByActive(boolean active);
     //List<ActivityType> findByActive(boolean active);
 
     //int countByNameLikeIgnoreCase(String nameFilter);

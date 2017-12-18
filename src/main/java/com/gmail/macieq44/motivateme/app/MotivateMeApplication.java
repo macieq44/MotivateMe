@@ -24,7 +24,7 @@ public class MotivateMeApplication extends SpringBootServletInitializer {
 	public static final String LOGIN_PROCESSING_URL = "/login";
 	public static final String LOGOUT_URL = "/login.html?logout";
 	public static final String LOGIN_FAILURE_URL = "/login.html?error";
-	public static final String SIGN_UP_URL = "/signup.html";
+	public static final String SIGN_UP_URL = "/registration.html";
 
 
 	public static void main(String[] args) {

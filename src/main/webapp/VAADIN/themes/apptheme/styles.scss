@@ -1,6 +1,6 @@
 
-@import "apptheme";
-
+@import "apptheme.scss";
+@import "designs.scss";
 .apptheme {
   @include apptheme;
 }

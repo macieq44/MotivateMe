@@ -1,5 +1,6 @@
 package com.gmail.macieq44.motivateme.ui.calendar;
 
+import com.gmail.macieq44.motivateme.HasLogger;
 import com.gmail.macieq44.motivateme.backend.entity.ActivityType;
 import com.vaadin.data.provider.DataProvider;
 import com.vaadin.spring.annotation.SpringComponent;
@@ -15,7 +16,7 @@ import javax.annotation.PostConstruct;
  */
 @SpringComponent
 @PrototypeScope
-public class ActivityTypeComboBox extends ComboBox<ActivityType>{
+public class ActivityTypeComboBox extends ComboBox<ActivityType> implements HasLogger{
 
     private final ActivityTypeComboBoxDataProvider dataProvider;
 
@@ -31,5 +32,6 @@ public class ActivityTypeComboBox extends ComboBox<ActivityType>{
     @PostConstruct
     private void initDataProvider() {
         setDataProvider(dataProvider);
+        getLogger().info("init");
     }
 }

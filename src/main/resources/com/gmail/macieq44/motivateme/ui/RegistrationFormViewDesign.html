@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout margin="false">
+   <vaadin-css-layout style-name="registration" width-full :center>
+    <vaadin-vertical-layout style-name="info" spacing="false" margin="false">
+     <vaadin-label style-name="h1" plain-text :center>
+       MotivateMe Project 
+     </vaadin-label>
+     <vaadin-label plain-text :center>
+       by Maciej Piechota 
+     </vaadin-label>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout spacing="false" margin="false">
+     <vaadin-css-layout :center>
+      <vaadin-vertical-layout size-auto margin="false">
+       <vaadin-css-layout style-name="registration-form">
+        <vaadin-label plain-text>
+          Name 
+        </vaadin-label>
+        <vaadin-text-field style-name="input"></vaadin-text-field>
+        <vaadin-label plain-text>
+          E-mail 
+        </vaadin-label>
+        <vaadin-text-field style-name="input"></vaadin-text-field>
+        <vaadin-label plain-text>
+          Password 
+        </vaadin-label>
+        <vaadin-password-field style-name="input"></vaadin-password-field>
+        <vaadin-label plain-text>
+          Repeat password 
+        </vaadin-label>
+        <vaadin-password-field style-name="input"></vaadin-password-field>
+        <vaadin-button style-name="submit" height="37px" plain-text>
+          Sign up 
+        </vaadin-button>
+       </vaadin-css-layout>
+      </vaadin-vertical-layout>
+     </vaadin-css-layout>
+    </vaadin-vertical-layout>
+   </vaadin-css-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

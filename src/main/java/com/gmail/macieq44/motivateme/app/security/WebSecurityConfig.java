@@ -41,15 +41,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity.authorizeRequests();
 
+        registry = registry.antMatchers("/registration*").permitAll();
+        registry = registry.antMatchers("/success*").permitAll();
         registry = registry.antMatchers("/**").hasAnyAuthority(Role.getRoles());
 
         HttpSecurity sec = registry.and();
 
         FormLoginConfigurer<HttpSecurity> login = sec.formLogin().permitAll();
-        login = login.loginPage(MotivateMeApplication.LOGIN_URL).loginProcessingUrl(MotivateMeApplication.LOGIN_PROCESSING_URL).failureUrl(MotivateMeApplication.LOGIN_FAILURE_URL).successHandler(successHandler);
-        login.and().logout().logoutSuccessUrl(MotivateMeApplication.LOGOUT_URL);
-
-
-
+        login = login.loginPage(MotivateMeApplication.LOGIN_URL)
+                .loginProcessingUrl(MotivateMeApplication.LOGIN_PROCESSING_URL)
+                .failureUrl(MotivateMeApplication.LOGIN_FAILURE_URL)
+                .successHandler(successHandler);
+        login.and()
+                .logout().logoutSuccessUrl(MotivateMeApplication.LOGOUT_URL);
     }
 }

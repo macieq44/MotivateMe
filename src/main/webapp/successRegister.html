@@ -5,17 +5,18 @@
     <title>MotivateMe Project</title>
 
     <script type="text/javascript">
-        var init = function() {
-            if (window.location.hash) {
-                document.getElementById("theform").action += window.location.hash;
-            }
-            if (window.location.search.indexOf("error")>0) {
-                document.body.className = "error";
-            }
-        }
+        //var init = function() {
+        //    if (window.location.hash) {
+        //        document.getElementById("theform").action += window.location.hash;
+        //    }
+        //    if (window.location.search.indexOf("error")>0) {
+        //        document.body.className = "error";
+        //    }
+        //}
+
 
         function signup() {
-            document.getElementById("signupform").action = "registration.html";
+            document.getElementById("theform").action();
         }
     </script>
 
@@ -32,7 +33,6 @@
             font-weight: 600;
             font-style: normal;
         }
-
         html {
             background: linear-gradient(145deg, #00567b 20%, #3b3b3b 80%);
         }
@@ -77,12 +77,6 @@
             padding: 28px;
             border-radius: 0 5px 5px 0;
         }
-
-        #signup {
-            display: flex;
-            background-color: #fff;
-            justify-content: center;
-        }
         button {
             background-color: #4b4b65;
         }
@@ -98,7 +92,6 @@
         form {
             max-width: 320px;
         }
-
         label {
             font-size: 14px;
             padding: 16px 0 5px 0;
@@ -139,14 +132,6 @@
             font: inherit;
             font-weight: 600;
         }
-
-        a.mylink {
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-            padding-top: 20px;
-        }
-
         #button-submit:focus:after {
             box-shadow: 0 0 0 2px rgba(0,0,0,.5);
             content: "";
@@ -180,16 +165,11 @@
     <p>by Maciej Piechota</p>
 </div>
 <div id="form">
-    <form method="post" action="login" id="theform">
-        <h2>Sign in</h2>
-        <label id="login-label" for="login">Email</label>
-        <input type="text" id="login" name="username" aria-labelledby="login-label" autofocus>
-        <label id="password-label" for="password">Password</label>
-        <input type="password" id="password" name="password" aria-labelledby="password-label">
-        <button id="button-submit" type="submit">Sign in</button>
-        <a href="registration.html" class="mylink">Sign Up</a>
-    </form>
+    <form method="POST" action="/user/registration" id="theform">
+        <h2>Sign up</h2>
 
+    </form>
 </div>
+
 </body>
 </html>

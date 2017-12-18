@@ -29,15 +29,16 @@ public class ActivityTypeService extends CrudService<ActivityType> {
     }
 
     public Page<ActivityType> findAnyMatching(Optional<String> filter, Pageable pageable) {
-        if(filter.isPresent()) {
-            String repositoryFilter = "%" + filter.get() + "%";
-            return activityTypeRepository.findByActiveAndTypeNameLikeIgnoreCase(true, repositoryFilter, pageable);
-        } else {
-            return activityTypeRepository.findByActiveAndTypeNameLikeIgnoreCase(true, "%", pageable);
-        }
+        return activityTypeRepository.findByActive(true, pageable);
+        //if(filter.isPresent()) {
+        //    String repositoryFilter = "%" + filter.get() + "%";
+        //    return activityTypeRepository.findByActiveAndTypeNameLikeIgnoreCase(true, repositoryFilter, pageable);
+        //} else {
+        //    return activityTypeRepository.findByActiveAndTypeNameLikeIgnoreCase(true, "%", pageable);
+        //}
     }
 
     public long countAnyMatching(Optional<String> filter) {
-        return 6;
+        return activityTypeRepository.countByActive(true);
     }
 }

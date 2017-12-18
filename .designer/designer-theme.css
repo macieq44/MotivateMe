@@ -1531,6 +1531,76 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
+.registration {
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+.registration .v-button {
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.registration .v-label, .registration  .v-caption-logo {
+	font-size: 14px;
+	padding: 16px 0 5px 0;
+	display: inline-block;
+}
+
+.registration .h1 {
+	font-size: 36px;
+	font-weight: 100;
+}
+
+.registration .info .v-verticallayout {
+	background-image: linear, 145deg, #484962 30%, #d06b41 100%;
+	text-align: center;
+	padding: 28px;
+	width: 100%;
+	display: inline-block;
+}
+
+.registration .registration-form {
+	height: 100%;
+	max-width: 320px;
+	background-color: #fff;
+	display: inline-block;
+}
+
+.registration .registration-form .v-button {
+	width: 100%;
+	margin-top: 37px;
+	height: 37px;
+	border: 1px solid #666;
+	border-radius: 4px;
+	background-image: linear, to bottom, rgba(255, 255, 255, 0.2) 2%, rgba(0, 0, 0, 0.1) 98%;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font: inherit;
+	font-weight: 600;
+}
+
+.registration .registration-form .input {
+	width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font: inherit;
+	font-size: 14px;
+	height: 37px;
+	border-radius: 4px;
+	padding: 4px 9px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.registration .registration-form .v-label, .registration .registration-form  .v-caption-logo {
+	font-size: 14px;
+	padding: 16px 0 5px 0;
+	display: inline-block;
+}
+
 .apptheme.v-app, .apptheme.v-app-loading {
 	font: 300 16px/1.55 "Open Sans", sans-serif;
 	color: #464646;
