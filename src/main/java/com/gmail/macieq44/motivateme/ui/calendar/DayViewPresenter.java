@@ -1,4 +1,5 @@
 package com.gmail.macieq44.motivateme.ui.calendar;
+import com.gmail.macieq44.motivateme.backend.service.ActivityService;
 import com.gmail.macieq44.motivateme.ui.navigation.NavigationManager;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
@@ -13,7 +14,11 @@ import java.time.LocalDate;
 @ViewScope
 public class DayViewPresenter {
     private DayView view;
+    private LocalDate date;
     private final NavigationManager navigationManager;
+
+    @Autowired
+    private ActivityService activityService;
 
     @Autowired
     public DayViewPresenter(NavigationManager navigationManager) {
@@ -26,9 +31,9 @@ public class DayViewPresenter {
 
     public void enterView(String dayToDisplay) {
 
-        LocalDate day = LocalDate.parse(dayToDisplay);
+        date = LocalDate.parse(dayToDisplay);
 
-        refreshView(day);
+        refreshView(date);
     }
 
     private void refreshView(LocalDate dayToDisplay) {
@@ -36,7 +41,11 @@ public class DayViewPresenter {
     }
 
     public void addPressed() {
-        navigationManager.navigateTo(ActivityEditView.class);
+        if (view.checkBeforeMaking()) {
+            return;
+        }
+        activityService.save(view.makeNewActivity(date));
+        view.refreshActivityList();
     }
 
     public void backToCalendarPressed() {

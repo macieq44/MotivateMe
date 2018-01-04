@@ -15,13 +15,17 @@
        December 6th 
      </vaadin-label>
     </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <com_gmail_macieq44_motivateme_ui_calendar-activity-type-combo-box caption="Type" _id="type"></com_gmail_macieq44_motivateme_ui_calendar-activity-type-combo-box>
+     <vaadin-text-field caption="Name" width="200px" _id="name"></vaadin-text-field>
+     <vaadin-combo-box caption="Struggle" width="85px" data-item-type="java.lang.Integer" _id="struggle"></vaadin-combo-box>
+     <vaadin-text-field caption="Duration" width="85px" _id="duration"></vaadin-text-field>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless" plain-text _id="addActivity" :bottom :right></vaadin-button>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout width-full>
      <vaadin-label style-name="header1" plain-text :bottom>
        activities 
      </vaadin-label>
-     <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless icon-align-right primary" plain-text _id="addActivity" :bottom :right>
-       New 
-     </vaadin-button>
     </vaadin-horizontal-layout>
     <com_gmail_macieq44_motivateme_ui_calendar-activity-grid style-name="activity-grid" width-full _id="activityList"></com_gmail_macieq44_motivateme_ui_calendar-activity-grid>
    </vaadin-vertical-layout>

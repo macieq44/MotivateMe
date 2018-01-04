@@ -61,4 +61,8 @@ public class ActivityGrid extends Grid<Activity> {
         return "<div class=\"header\">" + HtmlUtils.htmlEscape(header) + "</div><div class=\"content\">"
                 + HtmlUtils.htmlEscape(content) + "</div>";
     }
+
+    public void refresh() {
+        dataProvider.refreshAll();
+    }
 }
